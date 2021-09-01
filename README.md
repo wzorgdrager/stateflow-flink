@@ -1,0 +1,1 @@
+`protoc -I src/main/resources/ --java_out=src/main/java/nl/delftdata/stateflow_flink/proto/ src/main/resources/event.proto` 
