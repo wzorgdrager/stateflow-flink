@@ -16,20 +16,11 @@ import java.util.List;
 public class IngressRouter extends ProcessFunction<EventOuterClass.Event, EventOuterClass.Route> {
 
     private static final Logger LOG = LoggerFactory.getLogger(IngressRouter.class);
-    private String[] operators;
-    private final HashMap<String, OutputTag<EventOuterClass.Route>> outputs = new HashMap<>();
+    private final HashMap<String, OutputTag<EventOuterClass.Route>> outputs;
 
-    @Override
-    public void open(Configuration parameters) throws Exception {
-        this.operators =
-                parameters.get(ConfigOptions.key("stateflow.operators").stringType().defaultValue("")).split(",");
-
-        for (String operator : operators) {
-            this.outputs.put(operator, new OutputTag<EventOuterClass.Route>(operator + "-output"));
-            this.outputs.put(operator + "-create", new OutputTag<EventOuterClass.Route>(operator + "-create-output"));
-        }
+    public IngressRouter(HashMap<String, OutputTag<EventOuterClass.Route>> outputs) {
+        this.outputs = outputs;
     }
-
 
     @Override
     public void processElement(EventOuterClass.Event event, Context context,
@@ -40,6 +31,9 @@ public class IngressRouter extends ProcessFunction<EventOuterClass.Event, EventO
             collector.close();
             return;
         }
+
+        // The 'egress' is the main output
+        // Each other output is a sideoutput.
 
         if (event.getRequest() == EventOuterClass.Request.Ping) {
                 collector.collect(EventOuterClass.Route
@@ -67,7 +61,8 @@ public class IngressRouter extends ProcessFunction<EventOuterClass.Event, EventO
                         .build());
             } else {
                 // Send tot the next operator.
-                collector.collect(EventOuterClass.Route
+                context.output(this.outputs.get(routeName),
+                        EventOuterClass.Route
                         .newBuilder()
                         .setDirection(EventOuterClass.RouteDirection.INTERNAL)
                         .setKey(currentFun.getKey())
@@ -98,7 +93,6 @@ public class IngressRouter extends ProcessFunction<EventOuterClass.Event, EventO
 
 
         collector.close();
-
 
     }
 

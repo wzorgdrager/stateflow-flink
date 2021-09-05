@@ -16,14 +16,14 @@ import com.amazonaws.services.lambda.model.InvokeRequest;
 import com.amazonaws.services.lambda.model.InvokeResult;
 import com.amazonaws.services.lambda.model.ServiceException;
 
-public class InvokeLambda extends KeyedProcessFunction<String, EventOuterClass.Route, EventOuterClass.Event> {
+public class InvokeStatefulLambda extends KeyedProcessFunction<String, EventOuterClass.Route, EventOuterClass.Event> {
 
     private String functionName;
     private AWSLambda awsLambda;
 
     @Override
     public void open(Configuration parameters) throws Exception {
-        this.functionName = ConfigOptions.key("stateflow.aws-function-name").toString();
+        this.functionName = ConfigOptions.key("aws-function-name").toString();
         this.awsLambda = AWSLambdaClientBuilder.standard()
                 .withCredentials(new ProfileCredentialsProvider())
                 .withRegion(Regions.EU_WEST_2).build();

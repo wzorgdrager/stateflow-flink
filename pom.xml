@@ -18,11 +18,16 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_2.11</artifactId>
             <version>1.13.2</version>
-            <scope>provided</scope>
+           <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.11</artifactId>
+            <version>1.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients_2.11</artifactId>
             <version>1.13.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
@@ -37,7 +42,11 @@
             <artifactId>aws-java-sdk-lambda</artifactId>
             <version>1.12.58</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-runtime-web_2.11</artifactId>
+            <version>1.13.2</version>
+        </dependency>
 
 
     </dependencies>
