@@ -19,19 +19,17 @@ public class IngressRouter extends Router {
       EventOuterClass.Event event, Context context, Collector<EventOuterClass.Route> collector)
       throws Exception {
 
-    LOG.info("Now reading event " + event);
+    LOG.debug("Now reading event " + event + " " + System.currentTimeMillis());
     EventOuterClass.Route route = this.route(event);
 
     if (route.getDirection() == EventOuterClass.RouteDirection.EGRESS) {
       collector.collect(route);
     } else if (route.getDirection() == EventOuterClass.RouteDirection.INTERNAL) {
-      LOG.debug("Sending event to " + route.getRouteName() + ".");
+      LOG.debug("Sending event to " + route.getRouteName() + " with key " + route.getKey() +".");
       context.output(this.outputs.get(route.getRouteName()), route);
     } else {
       throw new RuntimeException("Unknown route. The event id " + event.getEventId());
     }
-
-    collector.close();
   }
 
   @Override
@@ -66,7 +64,7 @@ public class IngressRouter extends Router {
       return EventOuterClass.Route.newBuilder()
           .setDirection(EventOuterClass.RouteDirection.INTERNAL)
           .setKey("")
-          .setRouteName(getFullName(event.getFunAddress()))
+          .setRouteName(getFullName(event.getFunAddress()) + "-create")
           .setEventValue(event)
           .build();
     }

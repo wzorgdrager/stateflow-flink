@@ -5126,6 +5126,816 @@ public final class EventOuterClass {
 
   }
 
+  public interface EventRequestReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:EventRequestReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    boolean hasEvent();
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    EventOuterClass.Event getEvent();
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    EventOuterClass.EventOrBuilder getEventOrBuilder();
+
+    /**
+     * <code>bytes state = 2;</code>
+     */
+    com.google.protobuf.ByteString getState();
+
+    /**
+     * <code>string operator_name = 3;</code>
+     */
+    java.lang.String getOperatorName();
+    /**
+     * <code>string operator_name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getOperatorNameBytes();
+  }
+  /**
+   * Protobuf type {@code EventRequestReply}
+   */
+  public  static final class EventRequestReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:EventRequestReply)
+      EventRequestReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EventRequestReply.newBuilder() to construct.
+    private EventRequestReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EventRequestReply() {
+      state_ = com.google.protobuf.ByteString.EMPTY;
+      operatorName_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EventRequestReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              EventOuterClass.Event.Builder subBuilder = null;
+              if (event_ != null) {
+                subBuilder = event_.toBuilder();
+              }
+              event_ = input.readMessage(EventOuterClass.Event.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(event_);
+                event_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+
+              state_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              operatorName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return EventOuterClass.internal_static_EventRequestReply_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return EventOuterClass.internal_static_EventRequestReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              EventOuterClass.EventRequestReply.class, EventOuterClass.EventRequestReply.Builder.class);
+    }
+
+    public static final int EVENT_FIELD_NUMBER = 1;
+    private EventOuterClass.Event event_;
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    public boolean hasEvent() {
+      return event_ != null;
+    }
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    public EventOuterClass.Event getEvent() {
+      return event_ == null ? EventOuterClass.Event.getDefaultInstance() : event_;
+    }
+    /**
+     * <code>.Event event = 1;</code>
+     */
+    public EventOuterClass.EventOrBuilder getEventOrBuilder() {
+      return getEvent();
+    }
+
+    public static final int STATE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString state_;
+    /**
+     * <code>bytes state = 2;</code>
+     */
+    public com.google.protobuf.ByteString getState() {
+      return state_;
+    }
+
+    public static final int OPERATOR_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object operatorName_;
+    /**
+     * <code>string operator_name = 3;</code>
+     */
+    public java.lang.String getOperatorName() {
+      java.lang.Object ref = operatorName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operatorName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string operator_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOperatorNameBytes() {
+      java.lang.Object ref = operatorName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        operatorName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (event_ != null) {
+        output.writeMessage(1, getEvent());
+      }
+      if (!state_.isEmpty()) {
+        output.writeBytes(2, state_);
+      }
+      if (!getOperatorNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, operatorName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (event_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getEvent());
+      }
+      if (!state_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, state_);
+      }
+      if (!getOperatorNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, operatorName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof EventOuterClass.EventRequestReply)) {
+        return super.equals(obj);
+      }
+      EventOuterClass.EventRequestReply other = (EventOuterClass.EventRequestReply) obj;
+
+      boolean result = true;
+      result = result && (hasEvent() == other.hasEvent());
+      if (hasEvent()) {
+        result = result && getEvent()
+            .equals(other.getEvent());
+      }
+      result = result && getState()
+          .equals(other.getState());
+      result = result && getOperatorName()
+          .equals(other.getOperatorName());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEvent()) {
+        hash = (37 * hash) + EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getEvent().hashCode();
+      }
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getState().hashCode();
+      hash = (37 * hash) + OPERATOR_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOperatorName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static EventOuterClass.EventRequestReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static EventOuterClass.EventRequestReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static EventOuterClass.EventRequestReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static EventOuterClass.EventRequestReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(EventOuterClass.EventRequestReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code EventRequestReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:EventRequestReply)
+        EventOuterClass.EventRequestReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return EventOuterClass.internal_static_EventRequestReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return EventOuterClass.internal_static_EventRequestReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                EventOuterClass.EventRequestReply.class, EventOuterClass.EventRequestReply.Builder.class);
+      }
+
+      // Construct using EventOuterClass.EventRequestReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (eventBuilder_ == null) {
+          event_ = null;
+        } else {
+          event_ = null;
+          eventBuilder_ = null;
+        }
+        state_ = com.google.protobuf.ByteString.EMPTY;
+
+        operatorName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return EventOuterClass.internal_static_EventRequestReply_descriptor;
+      }
+
+      @java.lang.Override
+      public EventOuterClass.EventRequestReply getDefaultInstanceForType() {
+        return EventOuterClass.EventRequestReply.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public EventOuterClass.EventRequestReply build() {
+        EventOuterClass.EventRequestReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public EventOuterClass.EventRequestReply buildPartial() {
+        EventOuterClass.EventRequestReply result = new EventOuterClass.EventRequestReply(this);
+        if (eventBuilder_ == null) {
+          result.event_ = event_;
+        } else {
+          result.event_ = eventBuilder_.build();
+        }
+        result.state_ = state_;
+        result.operatorName_ = operatorName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof EventOuterClass.EventRequestReply) {
+          return mergeFrom((EventOuterClass.EventRequestReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(EventOuterClass.EventRequestReply other) {
+        if (other == EventOuterClass.EventRequestReply.getDefaultInstance()) return this;
+        if (other.hasEvent()) {
+          mergeEvent(other.getEvent());
+        }
+        if (other.getState() != com.google.protobuf.ByteString.EMPTY) {
+          setState(other.getState());
+        }
+        if (!other.getOperatorName().isEmpty()) {
+          operatorName_ = other.operatorName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        EventOuterClass.EventRequestReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (EventOuterClass.EventRequestReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private EventOuterClass.Event event_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          EventOuterClass.Event, EventOuterClass.Event.Builder, EventOuterClass.EventOrBuilder> eventBuilder_;
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public boolean hasEvent() {
+        return eventBuilder_ != null || event_ != null;
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public EventOuterClass.Event getEvent() {
+        if (eventBuilder_ == null) {
+          return event_ == null ? EventOuterClass.Event.getDefaultInstance() : event_;
+        } else {
+          return eventBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public Builder setEvent(EventOuterClass.Event value) {
+        if (eventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          eventBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public Builder setEvent(
+          EventOuterClass.Event.Builder builderForValue) {
+        if (eventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          eventBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public Builder mergeEvent(EventOuterClass.Event value) {
+        if (eventBuilder_ == null) {
+          if (event_ != null) {
+            event_ =
+              EventOuterClass.Event.newBuilder(event_).mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          eventBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public Builder clearEvent() {
+        if (eventBuilder_ == null) {
+          event_ = null;
+          onChanged();
+        } else {
+          event_ = null;
+          eventBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public EventOuterClass.Event.Builder getEventBuilder() {
+        
+        onChanged();
+        return getEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      public EventOuterClass.EventOrBuilder getEventOrBuilder() {
+        if (eventBuilder_ != null) {
+          return eventBuilder_.getMessageOrBuilder();
+        } else {
+          return event_ == null ?
+              EventOuterClass.Event.getDefaultInstance() : event_;
+        }
+      }
+      /**
+       * <code>.Event event = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          EventOuterClass.Event, EventOuterClass.Event.Builder, EventOuterClass.EventOrBuilder> 
+          getEventFieldBuilder() {
+        if (eventBuilder_ == null) {
+          eventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              EventOuterClass.Event, EventOuterClass.Event.Builder, EventOuterClass.EventOrBuilder>(
+                  getEvent(),
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        return eventBuilder_;
+      }
+
+      private com.google.protobuf.ByteString state_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes state = 2;</code>
+       */
+      public com.google.protobuf.ByteString getState() {
+        return state_;
+      }
+      /**
+       * <code>bytes state = 2;</code>
+       */
+      public Builder setState(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes state = 2;</code>
+       */
+      public Builder clearState() {
+        
+        state_ = getDefaultInstance().getState();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object operatorName_ = "";
+      /**
+       * <code>string operator_name = 3;</code>
+       */
+      public java.lang.String getOperatorName() {
+        java.lang.Object ref = operatorName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          operatorName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string operator_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOperatorNameBytes() {
+        java.lang.Object ref = operatorName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          operatorName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string operator_name = 3;</code>
+       */
+      public Builder setOperatorName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        operatorName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string operator_name = 3;</code>
+       */
+      public Builder clearOperatorName() {
+        
+        operatorName_ = getDefaultInstance().getOperatorName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string operator_name = 3;</code>
+       */
+      public Builder setOperatorNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        operatorName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:EventRequestReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:EventRequestReply)
+    private static final EventOuterClass.EventRequestReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new EventOuterClass.EventRequestReply();
+    }
+
+    public static EventOuterClass.EventRequestReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EventRequestReply>
+        PARSER = new com.google.protobuf.AbstractParser<EventRequestReply>() {
+      @java.lang.Override
+      public EventRequestReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EventRequestReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EventRequestReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EventRequestReply> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public EventOuterClass.EventRequestReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_FunctionType_descriptor;
   private static final 
@@ -5151,6 +5961,11 @@ public final class EventOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Route_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_EventRequestReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_EventRequestReply_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5173,17 +5988,19 @@ public final class EventOuterClass {
       "\014\n\nevent_type\"\213\001\n\005Route\022\"\n\tdirection\030\001 \001" +
       "(\0162\017.RouteDirection\022\022\n\nroute_name\030\002 \001(\t\022" +
       "\013\n\003key\030\003 \001(\t\022\035\n\013event_value\030\004 \001(\0132\006.Even" +
-      "tH\000\022\025\n\013bytes_value\030\005 \001(\014H\000B\007\n\005value*\231\001\n\005" +
-      "Reply\022\030\n\024SuccessfulInvocation\020\000\022\031\n\025Succe" +
-      "ssfulCreateClass\020\001\022\016\n\nFoundClass\020\002\022\017\n\013Ke" +
-      "yNotFound\020\003\022\032\n\026SuccessfulStateRequest\020\004\022" +
-      "\024\n\020FailedInvocation\020\005\022\010\n\004Pong\020\006*\247\001\n\007Requ" +
-      "est\022\023\n\017InvokeStateless\020\000\022\022\n\016InvokeStatef" +
-      "ul\020\001\022\r\n\tInitClass\020\002\022\r\n\tFindClass\020\003\022\014\n\010Ge" +
-      "tState\020\004\022\014\n\010SetState\020\005\022\017\n\013UpdateState\020\006\022" +
-      "\017\n\013DeleteState\020\007\022\r\n\tEventFlow\020\010\022\010\n\004Ping\020" +
-      "\t*6\n\016RouteDirection\022\n\n\006EGRESS\020\000\022\014\n\010INTER" +
-      "NAL\020\001\022\n\n\006CLIENT\020\002b\006proto3"
+      "tH\000\022\025\n\013bytes_value\030\005 \001(\014H\000B\007\n\005value\"P\n\021E" +
+      "ventRequestReply\022\025\n\005event\030\001 \001(\0132\006.Event\022" +
+      "\r\n\005state\030\002 \001(\014\022\025\n\roperator_name\030\003 \001(\t*\231\001" +
+      "\n\005Reply\022\030\n\024SuccessfulInvocation\020\000\022\031\n\025Suc" +
+      "cessfulCreateClass\020\001\022\016\n\nFoundClass\020\002\022\017\n\013" +
+      "KeyNotFound\020\003\022\032\n\026SuccessfulStateRequest\020" +
+      "\004\022\024\n\020FailedInvocation\020\005\022\010\n\004Pong\020\006*\247\001\n\007Re" +
+      "quest\022\023\n\017InvokeStateless\020\000\022\022\n\016InvokeStat" +
+      "eful\020\001\022\r\n\tInitClass\020\002\022\r\n\tFindClass\020\003\022\014\n\010" +
+      "GetState\020\004\022\014\n\010SetState\020\005\022\017\n\013UpdateState\020" +
+      "\006\022\017\n\013DeleteState\020\007\022\r\n\tEventFlow\020\010\022\010\n\004Pin" +
+      "g\020\t*6\n\016RouteDirection\022\n\n\006EGRESS\020\000\022\014\n\010INT" +
+      "ERNAL\020\001\022\n\n\006CLIENT\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5227,6 +6044,12 @@ public final class EventOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Route_descriptor,
         new java.lang.String[] { "Direction", "RouteName", "Key", "EventValue", "BytesValue", "Value", });
+    internal_static_EventRequestReply_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_EventRequestReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_EventRequestReply_descriptor,
+        new java.lang.String[] { "Event", "State", "OperatorName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

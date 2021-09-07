@@ -19,9 +19,8 @@ public class EgressRouter extends Router {
     // We have two outputs
     // 1. to the client (via the collector)
     // 2. to the internal topic (via sideoutput).
-    System.out.println("Got event " + event);
-
     EventOuterClass.Route route = this.route(event);
+    LOG.debug("Egress route " + route + System.currentTimeMillis());
 
     if (route.getDirection() == EventOuterClass.RouteDirection.CLIENT) {
       collector.collect(this.route(event));
